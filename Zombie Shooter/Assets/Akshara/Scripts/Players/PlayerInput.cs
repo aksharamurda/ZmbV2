@@ -98,7 +98,7 @@ namespace AksharaMurda
         void Update()
         {
 
-            if (!SettingManager.instance.useMobileConsole)
+            if (!GlobalManager.instance.useMobileConsole)
             {
                 pointer_x = Input.GetAxis("Mouse X");
                 pointer_y = Input.GetAxis("Mouse Y");
@@ -210,7 +210,7 @@ namespace AksharaMurda
 
         protected virtual void UpdateFireAndZoom()
         {
-            if (!SettingManager.instance.useMobileConsole)
+            if (!GlobalManager.instance.useMobileConsole)
             {
                 if (Input.GetButtonDown("Fire1")) _controller.FireInput = true;
                 if (Input.GetButtonUp("Fire1")) _controller.FireInput = false;
@@ -299,7 +299,7 @@ namespace AksharaMurda
             if (Input.GetKey(KeyCode.Alpha9)) { _motor.InputCancelGrenade(); _motor.InputWeapon(8); }
             if (Input.GetKey(KeyCode.Alpha0)) { _motor.InputCancelGrenade(); _motor.InputWeapon(9); }
 
-            if (!SettingManager.instance.useMobileConsole)
+            if (!GlobalManager.instance.useMobileConsole)
             {
                 if (Input.mouseScrollDelta.y < 0)
                 {

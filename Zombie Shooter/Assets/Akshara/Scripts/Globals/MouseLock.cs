@@ -8,7 +8,7 @@ namespace AksharaMurda
 
         private void LateUpdate()
         {
-            if (SettingManager.instance.useMobileConsole)
+            if (GlobalManager.instance.useMobileConsole)
                 return;
 
             if (Input.GetKeyDown(KeyCode.Escape))

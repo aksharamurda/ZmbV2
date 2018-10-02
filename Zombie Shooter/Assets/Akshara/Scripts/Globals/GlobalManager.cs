@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace AksharaMurda {
 
-    public class SettingManager : MonoBehaviour
+    public class GlobalManager : MonoBehaviour
     {
-        public static SettingManager instance;
+        public static GlobalManager instance;
 
         [Header("Control")]
         public bool useMobileConsole;

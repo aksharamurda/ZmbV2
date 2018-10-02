@@ -54,6 +54,7 @@ namespace AksharaMurda
 
         private float _lastTargetDistance;
 
+        [HideInInspector]
         public Camera _camera;
 
         private PlayerController _controller;
@@ -70,7 +71,7 @@ namespace AksharaMurda
 
         private void Awake()
         {
-            //_camera = GetComponent<Camera>();
+            _camera = GetComponentInChildren<Camera>();
             _offset = States.Default.Offset;
 
             // Required for the explosion preview.
