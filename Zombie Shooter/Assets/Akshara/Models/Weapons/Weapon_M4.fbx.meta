@@ -1,39 +1,14 @@
 fileFormatVersion: 2
-guid: 4304d1549d036e149afed0750ad9c3d9
+guid: 331a365b4b4f8f84882970b95c35611f
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: SM_Wep_RifleSwat_ChargeHandle_01
-    100004: SM_Wep_RifleSwat_Mag_01
-    100006: SM_Wep_RifleSwat_Slide_01
-    100008: SM_Wep_RifleSwat_Stock_01
-    100010: SM_Wep_RifleSwat_Trigger_01
     400000: //RootNode
-    400002: SM_Wep_RifleSwat_ChargeHandle_01
-    400004: SM_Wep_RifleSwat_Mag_01
-    400006: SM_Wep_RifleSwat_Slide_01
-    400008: SM_Wep_RifleSwat_Stock_01
-    400010: SM_Wep_RifleSwat_Trigger_01
     2100000: lambert9
     2300000: //RootNode
-    2300002: SM_Wep_RifleSwat_ChargeHandle_01
-    2300004: SM_Wep_RifleSwat_Mag_01
-    2300006: SM_Wep_RifleSwat_Slide_01
-    2300008: SM_Wep_RifleSwat_Stock_01
-    2300010: SM_Wep_RifleSwat_Trigger_01
     3300000: //RootNode
-    3300002: SM_Wep_RifleSwat_ChargeHandle_01
-    3300004: SM_Wep_RifleSwat_Mag_01
-    3300006: SM_Wep_RifleSwat_Slide_01
-    3300008: SM_Wep_RifleSwat_Stock_01
-    3300010: SM_Wep_RifleSwat_Trigger_01
-    4300000: SM_Wep_RifleSwat_01
-    4300002: SM_Wep_RifleSwat_Mag_01
-    4300004: SM_Wep_RifleSwat_Stock_01
-    4300006: SM_Wep_RifleSwat_Slide_01
-    4300008: SM_Wep_RifleSwat_Trigger_01
-    4300010: SM_Wep_RifleSwat_ChargeHandle_01
+    4300000: M4
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -88,8 +63,8 @@ ModelImporter:
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 0
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1

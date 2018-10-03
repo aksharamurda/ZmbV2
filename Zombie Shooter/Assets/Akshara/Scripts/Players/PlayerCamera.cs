@@ -71,7 +71,7 @@ namespace AksharaMurda
 
         private void Awake()
         {
-            //_camera = GetComponentInChildren<Camera>();
+            _camera = GetComponentInChildren<Camera>();
             _offset = States.Default.Offset;
 
             // Required for the explosion preview.
