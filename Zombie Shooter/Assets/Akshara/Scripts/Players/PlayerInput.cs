@@ -69,7 +69,9 @@ namespace AksharaMurda
 
         public float minVerticalValue = -30;
         public float maxVerticalValue = 30;
+        [Range(0, -60)]
         public float minHorizontalValue = -30;
+        [Range(0, 60)]
         public float maxHorizontalValue = 30;
         private void Awake()
         {
@@ -84,8 +86,6 @@ namespace AksharaMurda
             {
                 pointer_x = Input.GetAxis("Mouse X");
                 pointer_y = Input.GetAxis("Mouse Y");
-                pointer_x = Mathf.Clamp(pointer_x, minHorizontalValue, maxHorizontalValue);
-                pointer_y = Mathf.Clamp(pointer_y, minVerticalValue, maxVerticalValue);
                 HorRotateSpeed = HorizontalRotateSpeed;
                 VerRotateSpeed = VerticalRotateSpeed;
             }
@@ -322,7 +322,7 @@ namespace AksharaMurda
 
             var lookPosition = camera.transform.position + camera.transform.forward * 1000;
 
-            _controller.LookTargetInput = lookPosition;
+            _controller.LookTargetInput =  lookPosition;
             _controller.GrenadeHorizontalAngleInput = Util.AngleOfVector(camera.transform.forward);
             _controller.GrenadeVerticalAngleInput = Mathf.Asin(camera.transform.forward.y) * 180f / Mathf.PI;
 
@@ -347,8 +347,8 @@ namespace AksharaMurda
             if (_controller.IsZooming && _motor != null && _motor.Gun != null)
                 scale = 1.0f - _motor.Gun.Zoom / camera.StateFOV;
 
-            //camera.Horizontal = Mathf.Clamp(camera.Horizontal, minHorizontalValue, maxHorizontalValue);
-            //camera.Vertical = Mathf.Clamp(camera.Vertical, minVerticalValue, maxVerticalValue);
+            camera.Horizontal = Mathf.Clamp(camera.Horizontal, minHorizontalValue, maxHorizontalValue);
+            camera.Vertical = Mathf.Clamp(camera.Vertical, minVerticalValue, maxVerticalValue);
 
             camera.Horizontal = Mathf.LerpAngle(camera.Horizontal, camera.Horizontal + pointer_x * HorRotateSpeed * Time.timeScale * scale, 1.0f);
             camera.Vertical = Mathf.LerpAngle(camera.Vertical, camera.Vertical - pointer_y * VerRotateSpeed * Time.timeScale * scale, 1.0f);

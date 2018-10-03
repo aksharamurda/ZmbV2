@@ -176,7 +176,8 @@ namespace AksharaMurda
                 cameraPosition += _obstacleFix;
 
                 transform.position = cameraPosition;
-                transform.LookAt(cameraTarget);
+                var cameraTargetLook = Vector3.Lerp(transform.position, cameraTarget, Time.deltaTime * 1);
+                transform.LookAt(cameraTargetLook);
 
                 if (Target.IsFiringFromCamera)
                     Target.FireFrom(transform.position);

@@ -10,6 +10,7 @@ namespace AksharaMurda {
 
         [Header("Control")]
         public bool useMobileConsole;
+        public bool useBodyLookTarget;
 
         [Header("UI")]
         public bool hideHealthBar;

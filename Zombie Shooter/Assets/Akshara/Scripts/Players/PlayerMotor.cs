@@ -838,7 +838,7 @@ namespace AksharaMurda
 
         public void SetBodyLookTarget(Vector3 target, float speed = 8f)
         {
-            _bodyLookTarget = target;
+            _bodyLookTarget =  target;
 
             if (!_hasLookTarget)
             {

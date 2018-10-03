@@ -211,7 +211,7 @@ namespace AksharaMurda
 
             if (_isActivelyFacing || _motor.IsAiming || _motor.IsInCover)
             {
-                if (!_isSprinting)
+                if (!_isSprinting && GlobalManager.instance.useBodyLookTarget)
                     _motor.SetBodyLookTarget(LookTargetInput);
 
                 _motor.SetLookTarget(LookTargetInput);
