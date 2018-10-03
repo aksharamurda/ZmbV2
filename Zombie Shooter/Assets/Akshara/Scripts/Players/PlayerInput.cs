@@ -67,7 +67,9 @@ namespace AksharaMurda
         private float HorRotateSpeed = 0f;
         private float VerRotateSpeed = 0f;
 
+        [Range(0, -30)]
         public float minVerticalValue = -30;
+        [Range(0, 30)]
         public float maxVerticalValue = 30;
         [Range(0, -60)]
         public float minHorizontalValue = -30;

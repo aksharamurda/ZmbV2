@@ -1236,7 +1236,7 @@ MonoBehaviour:
   DoubleTapDelay: 0.3
   pointer_x: 0
   pointer_y: 0
-  minVerticalValue: -30
-  maxVerticalValue: 30
+  minVerticalValue: -15
+  maxVerticalValue: 20
   minHorizontalValue: -60
   maxHorizontalValue: 15
