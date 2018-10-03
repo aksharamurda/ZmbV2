@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.4964127, b: 0.57481724, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -509,6 +509,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 331a365b4b4f8f84882970b95c35611f,
     type: 3}
   m_PrefabInternal: {fileID: 671849005}
+--- !u!114 &671849009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 671849006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd4e38d624d3dfc4eb626cba9da53fd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Eject:
+  - {fileID: 8300000, guid: 0694dd123b4f5ec459fca96fec54f9e8, type: 3}
+  Rechamber:
+  - {fileID: 8300000, guid: 9722ab98c96dcbb4abfb8166a2be56c8, type: 3}
+  Fire:
+  - {fileID: 8300000, guid: bc26cbd5664cd1a48b28b4c579bbfe87, type: 3}
+  - {fileID: 8300000, guid: e290c8ac7e0884d4db6863a389557460, type: 3}
+  - {fileID: 8300000, guid: e01ac229ced506748b99edb25e8f91c1, type: 3}
 --- !u!1 &769629095
 GameObject:
   m_ObjectHideFlags: 0
@@ -1264,6 +1283,7 @@ MonoBehaviour:
   DoubleTapDelay: 0.3
   pointer_x: 0
   pointer_y: 0
+  useClampPlayer: 1
   minVerticalValue: -15
   maxVerticalValue: 20
   minHorizontalValue: -60
@@ -1359,15 +1379,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b414c29d46a09fa4aa0b4040f210ab90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Gun
+  Name: Revolver
   Zoom: 0
   iconGun: {fileID: 0}
   Scope: {fileID: 0}
-  Rate: 7
+  Rate: 2
   Distance: 50
-  Damage: 10
-  ClipSize: 10
-  Clip: 10
+  Damage: 35
+  ClipSize: 6
+  Clip: 4
   AutoReload: 0
   MeleeDamage: 20
   MeleeDistance: 1.5
@@ -1380,20 +1400,38 @@ MonoBehaviour:
   Aim: {fileID: 1791662675}
   Bullet: {fileID: 0}
   RecoilSettings:
-    Strength: 0.1
+    Strength: 0.38
     AttackTime: 0.05
     DecayTime: 0.25
-    UpForce: 0.5
-    Limit: 0.1
-  LeftHandDefault: {fileID: 0}
+    UpForce: 3.78
+    Limit: 1
+  LeftHandDefault: {fileID: 976537593}
   LeftHandOverwrite:
     Aim: {fileID: 0}
     LowCoverLeft: {fileID: 0}
     LowCoverRight: {fileID: 0}
     TallCoverLeft: {fileID: 0}
     TallCoverRight: {fileID: 0}
-  Character: {fileID: 0}
-  Target: {x: 0, y: 0, z: 0}
+  Character: {fileID: 1671469784}
+  Target: {x: -53.964836, y: -66.02839, z: 995.47754}
+--- !u!114 &1696604474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1696604472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd4e38d624d3dfc4eb626cba9da53fd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Eject:
+  - {fileID: 8300000, guid: 0694dd123b4f5ec459fca96fec54f9e8, type: 3}
+  Rechamber:
+  - {fileID: 8300000, guid: 9722ab98c96dcbb4abfb8166a2be56c8, type: 3}
+  Fire:
+  - {fileID: 8300000, guid: c9687c6d4006c854585b1840fcd48188, type: 3}
+  - {fileID: 8300000, guid: d2ed33d4bcc3e4745b47b8b61c83e486, type: 3}
 --- !u!1 &1791662675
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,6 +32,8 @@ namespace AksharaMurda
         //[Tooltip("Camera to rotate around the player. If set to none it is taken from the main camera.")]
         //public ThirdPersonCamera CameraOverride;
 
+        
+
         [Tooltip("Multiplier for horizontal camera rotation.")]
         [Range(0, 10)]
         public float HorizontalRotateSpeed = 0.9f;
@@ -67,6 +69,7 @@ namespace AksharaMurda
         private float HorRotateSpeed = 0f;
         private float VerRotateSpeed = 0f;
 
+        public bool useClampPlayer;
         [Range(0, -30)]
         public float minVerticalValue = -30;
         [Range(0, 30)]
@@ -349,11 +352,17 @@ namespace AksharaMurda
             if (_controller.IsZooming && _motor != null && _motor.Gun != null)
                 scale = 1.0f - _motor.Gun.Zoom / camera.StateFOV;
 
-            camera.Horizontal = Mathf.Clamp(camera.Horizontal, minHorizontalValue, maxHorizontalValue);
-            camera.Vertical = Mathf.Clamp(camera.Vertical, minVerticalValue, maxVerticalValue);
+
 
             camera.Horizontal = Mathf.LerpAngle(camera.Horizontal, camera.Horizontal + pointer_x * HorRotateSpeed * Time.timeScale * scale, 1.0f);
             camera.Vertical = Mathf.LerpAngle(camera.Vertical, camera.Vertical - pointer_y * VerRotateSpeed * Time.timeScale * scale, 1.0f);
+
+            if (useClampPlayer)
+            {
+                camera.Horizontal = Mathf.Clamp(camera.Horizontal, minHorizontalValue, maxHorizontalValue);
+                camera.Vertical = Mathf.Clamp(camera.Vertical, minVerticalValue, maxVerticalValue);
+            }
+
             camera.UpdatePosition();
 
         }
