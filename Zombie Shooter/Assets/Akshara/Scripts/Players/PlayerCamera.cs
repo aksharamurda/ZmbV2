@@ -54,7 +54,7 @@ namespace AksharaMurda
 
         private float _lastTargetDistance;
 
-        [HideInInspector]
+        //[HideInInspector]
         public Camera _camera;
 
         private PlayerController _controller;
@@ -71,7 +71,7 @@ namespace AksharaMurda
 
         private void Awake()
         {
-            _camera = GetComponentInChildren<Camera>();
+            //_camera = GetComponentInChildren<Camera>();
             _offset = States.Default.Offset;
 
             // Required for the explosion preview.
@@ -190,9 +190,6 @@ namespace AksharaMurda
             if (Target == null)
                 return;
 
-
-
-            Vertical = Mathf.Clamp(Vertical, -45, 70);
 
             var newPosition = Target.GetPivotPosition();
             var newRotation = Target.GetPivotRotation();

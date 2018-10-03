@@ -6,9 +6,6 @@ namespace AksharaMurda
 {
     public class PlayerInput : MonoBehaviour
     {
-        /// <summary>
-        /// Camera mooved by this input component.
-        /// </summary>
         public PlayerCamera Camera
         {
             get
@@ -32,37 +29,22 @@ namespace AksharaMurda
             }
         }
 
-        /// <summary>
-        /// Camera to rotate around the player. If set to none it is taken from the main camera.
-        /// </summary>
         //[Tooltip("Camera to rotate around the player. If set to none it is taken from the main camera.")]
         //public ThirdPersonCamera CameraOverride;
 
-        /// <summary>
-        /// Multiplier for horizontal camera rotation.
-        /// </summary>
         [Tooltip("Multiplier for horizontal camera rotation.")]
         [Range(0, 10)]
         public float HorizontalRotateSpeed = 0.9f;
         [Range(0, 10)]
         public float MobileHorizontalRotateSpeed = 0.9f;
-        /// <summary>
-        /// Multiplier for vertical camera rotation.
-        /// </summary>
         [Tooltip("Multiplier for vertical camera rotation.")]
         [Range(0, 10)]
         public float VerticalRotateSpeed = 1.0f;
         [Range(0, 10)]
         public float MobileVerticalRotateSpeed = 1.0f;
-        /// <summary>
-        /// Is camera responding to mouse movement when the mouse cursor is unlocked.
-        /// </summary>
         [Tooltip("Is camera responding to mouse movement when the mouse cursor is unlocked.")]
         public bool RotateWhenUnlocked = false;
 
-        /// <summary>
-        /// Maximum time in seconds to wait for a second tap to active rolling.
-        /// </summary>
         [Tooltip("Maximum time in seconds to wait for a second tap to active rolling.")]
         public float DoubleTapDelay = 0.3f;
 
@@ -102,6 +84,8 @@ namespace AksharaMurda
             {
                 pointer_x = Input.GetAxis("Mouse X");
                 pointer_y = Input.GetAxis("Mouse Y");
+                pointer_x = Mathf.Clamp(pointer_x, minHorizontalValue, maxHorizontalValue);
+                pointer_y = Mathf.Clamp(pointer_y, minVerticalValue, maxVerticalValue);
                 HorRotateSpeed = HorizontalRotateSpeed;
                 VerRotateSpeed = VerticalRotateSpeed;
             }
@@ -350,7 +334,6 @@ namespace AksharaMurda
             _controller.FireTargetInput = closestHit;
         }
 
-
         protected virtual void UpdateCamera()
         {
             var camera = Camera;
@@ -364,8 +347,9 @@ namespace AksharaMurda
             if (_controller.IsZooming && _motor != null && _motor.Gun != null)
                 scale = 1.0f - _motor.Gun.Zoom / camera.StateFOV;
 
-            camera.Vertical = Mathf.Clamp(camera.Vertical, minVerticalValue, maxVerticalValue);
-            camera.Horizontal = Mathf.Clamp(camera.Horizontal, minHorizontalValue, maxHorizontalValue);
+            //camera.Horizontal = Mathf.Clamp(camera.Horizontal, minHorizontalValue, maxHorizontalValue);
+            //camera.Vertical = Mathf.Clamp(camera.Vertical, minVerticalValue, maxVerticalValue);
+
             camera.Horizontal = Mathf.LerpAngle(camera.Horizontal, camera.Horizontal + pointer_x * HorRotateSpeed * Time.timeScale * scale, 1.0f);
             camera.Vertical = Mathf.LerpAngle(camera.Vertical, camera.Vertical - pointer_y * VerRotateSpeed * Time.timeScale * scale, 1.0f);
             camera.UpdatePosition();
